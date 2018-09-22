@@ -5,30 +5,32 @@
 	left:0px;
 	margin:0;
 }
-#sidebar{
-	background-color:white;
-	border:2px solid #dedede;
+#sidebar {
+	background-color: #ffffff;
+	border: 1px solid #dedede;
 	border-radius: 4px;
-	color:black;
-	display:block;
-	overflow-x:hidden;
-	overflow-y:hidden;
-	width:98%;
-	margin:1em;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #888888;
+	display: block;
+	margin: 1em 1%;
+	overflow: hidden;
+	width: 100%;
 }
-#sidebar ul{
-	margin:0;
-	padding:0;
+#sidebar ul {
+	margin: 0;
+	padding: 0;
 }
-#sidebar ul li{
-	display:inline-block;
-	list-style-type:none;
-	transition:all 0.2s;
+    
+#sidebar ul li {
+	display: inline-block;
+	list-style-type: none;
 	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
 }
-#sidebar ul li .menu{
-	border-top:4px solid #aaaaaa;
-	border-right:4px solid transparent;
+    
+#sidebar > ul > li > a > .menu {
+	border-top: 4px solid #aaaaaa;
+	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
 	content: '';
 	display: inline-block;
@@ -38,22 +40,27 @@
 	-webkit-transition: color 0.1s linear;
 	transition: color 0.1s linear;
 }
-#sidebar ul li a{
-	color:black;
-	display:block;
-	line-height:56px;
-	padding:0 10px;
-	text-decoration:none;
+    
+#sidebar > ul > li > a {
+	color: black;
+	display: block;
+	line-height: 56px;
+	padding: 0 10px;
+	text-decoration: none;
 }
-#sidebar ul li a:hover{
-	color: greenyellow;
+    
+#sidebar > ul > li:hover {
+	background-color: greenyellow;
 }
-#sidebar ul li:hover .menu {
+#sidebar > ul > li:hover > a {
+	color: black;
+}
+    
+#sidebar > ul > li:hover > a > .menu {
 	border-top-color: rgb( 255, 255, 255 );
 }
-#sidebar ul li div{
-	color:black;
-	background-color: white;
+#sidebar > ul > li > div {
+	background-color: green;
 	border-top: 0;
 	border-radius: 0 0 4px 4px;
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
@@ -61,26 +68,26 @@
 	margin: 0;
 	opacity: 0;
 	position: absolute;
-	width: 165px;
+	width: 120px;
 	visibility: hidden;
 	-webkit-transiton: opacity 0.2s;
 	transition: opacity 0.2s;
 }
-#sidebar ul li:hover div{
+#sidebar > ul > li:hover > div {
 	display: block;
- 	opacity: 1;
+	opacity: 1;
 	visibility: visible;
 }
-#sidebar ul li div ul li {
+#sidebar > ul > li > div ul > li {
 	display: block;
 }
-#sidebar ul li div ul li a {
-	color: black;
+#sidebar > ul > li > div ul > li > a {
+	color: white;
 	display: block;
-	padding: 12px 24px;
+	padding: 8px 24px;
 	text-decoration: none;
 }
-#sidebar ul li div ul li a:hover {
+#sidebar > ul > li > div ul > li:hover > a {
 	background-color: rgba( 255, 255, 255, 0.1);
 }
 #main{
@@ -88,3 +95,4 @@
 	background:white;
 	color:black;	
 }
+
