@@ -24,6 +24,7 @@
 #sidebar ul li {
 	display: inline-block;
 	list-style-type: none;
+	float:left;
 	border-right:solid 1px #dedede;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
