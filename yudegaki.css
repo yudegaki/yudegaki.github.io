@@ -21,7 +21,7 @@
 	padding: 0;
 }
     
-#sidebar ul li {
+#sidebar > ul > li {
 	display: inline-block;
 	list-style-type: none;
 	float:left;
