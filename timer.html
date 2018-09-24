@@ -41,23 +41,15 @@
 		</ul>
 	</div>		
 	<div id="main">
-		<center><h1>ここはyudegakiのホームページだよ</h1>
-		<br><br>
-		<p><span id="greeting">hello</span>、yudegakiです。<br>
-		このホームページに自分の生活をhtml,css,javascriptの練習がてら<br>載せていけたらいいなと思っています。<br><br>
-		上の「リンク集」からお好きなページにどうぞ！</p>
-		<br>
-		<p id="DateTimeDisp"><p>
-		<br>
-		<p>↓↓↓私のtwitterです↓↓↓</p>
-		<br><br>
-		<a class="twitter-timeline "width="1000px" height="700px" href="https://twitter.com/yudegaki_?ref_src=twsrc%5Etfw">Tweets by yudegaki_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br><br><br>
-		</center>
-		<address>
-		<hr>
-		Written by yudegaki on September 17th, 2018
-	</address>
+        <p><center><h1>便利機能~その1~ストップウォッチ</h1></center></p>
+        <br>
+       <div> <input id="start"type="button"value="計測スタート"onClick="Timer_Start();">
+        <input id="end"type="button"value="計測ストップ"onClick="Timer_End();">
+        </div>
+        <input type="button"value="計測リセット"onClick="Timer_Reset();"><br>
+        <p id="Timer_Retrun">00h 00m 00.00s</p>
+        
 	</div>
 </body>
-<script type="text/javascript" src="yudegaki.js"></script>
+<script type="text/javascript" src="timer.js"></script>
 </html>
