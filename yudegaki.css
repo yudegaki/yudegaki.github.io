@@ -30,8 +30,9 @@
     
 #sidebar > ul > li > a > .menu {
 	border-top: 4px solid #aaaaaa;
-	border-right: 4px solid red;
-	border-left: 4px solid red;
+	/*下のtransparentはメニューの三角形の色*/
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
 	content: '';
 	display: inline-block;
 	height: 0;
