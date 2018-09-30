@@ -1,5 +1,5 @@
 var check_time=new Date();
-var check=check_time.getHours;
+var check=check_time.getHours();
 var greet=document.getElementById("greeting");
 console.log(document.getElementById("greeting").textContent);
 /*時刻に応じて挨拶の変更をする*/
