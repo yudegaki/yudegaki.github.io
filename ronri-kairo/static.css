@@ -1,0 +1,22 @@
+#ronri-title{
+    background-color: aqua;
+    text-align: center;
+}
+body{
+    text-align: center;
+}
+.choices:hover {
+	background-color: aqua;
+}
+#choice-1{
+    background-color: violet;
+}
+#choice-2{
+    background-color: violet;
+}
+#choice-3{
+    background-color: violet;
+}
+#choice-4{
+    background-color: violet;
+}
