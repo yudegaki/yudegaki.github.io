@@ -33,17 +33,15 @@ function Exchange_img(num){
 
 }
 
-let target = document.getElementById('hoge');
+let target = document.getElementById('kairo-1');
 
 target.addEventListener('click', function(e){
     if(choice_num!=0){
-        let x = e.offsetX; // =>要素左上からのx座標
-        let y = e.offsetY; // =>要素左上からのy座標
-
-        let canvas = document.getElementById('hoge');
+        let canvas = document.getElementById('kairo-1');
         /* 2Dコンテキスト */
         let ctx = canvas.getContext('2d');
         //画像を描写
-        ctx.drawImage(img,x,y);
+        if(choice_num!=0)ctx.drawImage(img,0,0,300,150);
+        else ctx.clearRect(0,0,300,150);
     }
 });
