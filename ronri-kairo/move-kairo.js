@@ -35,25 +35,41 @@ function Exchange_img(num){
 let target = document.getElementById('hoge');
 
 target.addEventListener('click', function(e){
-    if(choice_num!=0){
-        let x = e.offsetX; // =>要素左上からのx座標
-        let y = e.offsetY; // =>要素左上からのy座標
+    
+    let x = e.offsetX; // =>要素左上からのx座標
+    let y = e.offsetY; // =>要素左上からのy座標
 
-        let canvas = document.getElementById('hoge');
-        let ctx = canvas.getContext('2d');
+    let canvas = document.getElementById('hoge');
+    let ctx = canvas.getContext('2d');
 
-        if(x>=200&&x<=300&&y>=200&&y<=300){
-            num_1=choice_num;
-            ctx.drawImage(img,200,200);
+    if(x>=200&&x<=300&&y>=200&&y<=300){
+        num_1=choice_num; 
+        if(choice_num!=0){
+             ctx.drawImage(img,200,200,100,100);
         }
-        else if(x>=200&&x<=300&&y>=500&&y<=600){
-            num_2=choice_num;
-            ctx.drawImage(img,200,500);
+        else{
+            ctx.clearRect(200,200,100,100);
+            ctx.strokeRect(200,200,100,100);         
         }
-        else if(x>=500&&x<=600&&y>=350&&y<=450){
-            num_3=choice_num;
-            ctx.drawImage(img,500,350);
+    }
+    else if(x>=200&&x<=300&&y>=500&&y<=600){
+        num_2=choice_num;
+        if(choice_num!=0){
+            ctx.drawImage(img,200,500,100,100);
         }
-
+        else{
+            ctx.clearRect(200,500,100,100);
+            ctx.strokeRect(200,500,100,100);
+        }
+    }
+    else if(x>=500&&x<=600&&y>=350&&y<=450){
+        num_3=choice_num;
+        if(choice_num!=0){
+            ctx.drawImage(img,500,350,100,100);
+        }
+        else{
+            ctx.clearRect(500,350,100,100);
+            ctx.strokeRect(500,350,100,100);
+        }
     }
 });
