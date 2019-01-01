@@ -31,16 +31,15 @@ function draw() {
   //back*2
   write_line(ctx,450,383,500,383);
   write_line(ctx,450,416,500,416);
-
+  
+  //線を結ぶ
+  write_line(ctx,350,250,450,383);
+  write_line(ctx,350,550,450,416);
 
   //LED用のスペース
   ctx.beginPath();
   ctx.arc(700, 400, 50, 0, Math.PI*2, true);//trueで反時計周り、falseで時計回りに描写
   ctx.stroke();
-
-  //線を結ぶ
-  write_line(ctx,350,250,450,383);
-  write_line(ctx,350,550,450,416);
 
   for(var i=1;i<=4;i++){
     canvas = document.getElementById('choice-'+i);
