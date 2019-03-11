@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>アニメ一覧</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h2>hoge年fugaクール目のアニメ一覧を列挙するサイトです</h2>
+        <div class="set-background"><div id="selector-space">
+            <p>調べたい年度とクールを選択してね</p>
+            <select id="year" class="select-butt">
+                <option value="2015">2015年</option>
+                <option value="2016">2016年</option>
+                <option value="2017">2017年</option>
+                <option value="2018">2018年</option>
+                <option value="2019">2019年</option>
+            </select>
+            <select id="season">
+                <option value="1">1クール目(冬アニメ)</option>
+                <option value="2">2クール目(春アニメ)</option>
+                <option value="3">3クール目(夏アニメ)</option>
+                <option value="4">4クール目(秋アニメ)</option>
+            </select>
+            <br><br>
+            <a href="#" onclick="make_anime_json_url();" class="btn-circle-3d">Submit!</a>
+            <br><br>
+        </div></div>
+        <div class="set-background"><div id="show_elements"></div></div>
+    </body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</html>
