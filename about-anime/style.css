@@ -1,0 +1,88 @@
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+    margin-bottom: 20px;
+    height: 45px;
+	padding: 7px 30px 7px 10px;
+	font-size: 25px;
+	line-height: 1.1em;
+	border-radius: 5px;
+	border: none;
+	background-repeat: no-repeat;
+	background-size: 12px 10px;
+	background-position: right 10px center;
+	background-color: #bddfff;
+}
+button{
+    font-size: 30px;
+}
+.btn-circle-3d {
+    display: inline-block;
+    text-decoration: none;
+    background: #bddfff;
+    color: gray;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+    overflow: hidden;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px#bddfff;
+    transition: .4s;
+}
+.btn-circle-3d:active {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+    box-shadow: 0 0 1px #00000026;
+    border-bottom: none;
+}
+#show_elements{
+    background-color:white;
+    text-align: center;
+    width:80%;
+    transform: translateX(+12.5%);
+}
+.anime_title{
+    font-size: 30px;
+    /*線の種類（二重線）太さ 色*/
+    border-bottom: double 5px #FFC778;
+  }
+
+#sum_of_anime{
+    font-size: 30px;
+    color: #505050;/*文字色*/
+    padding: 0.5em;/*文字周りの余白*/
+    display: inline-block;
+    line-height: 1.3;/*行高*/
+    background: #dbebf8;/*背景色*/
+    vertical-align: middle;/*上下中央*/
+    border-radius: 25px 0px 0px 25px;/*左側の角を丸く*/
+}
+#sum_of_anime:before {
+    content: '●';
+    color: white;
+    margin-right: 8px;
+}
+h2 {
+    background-color:#bddfff;
+    padding: .5em;
+    border: 3px solid gray;
+    border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
+}
+body{
+    background-color: #d0d0d0;
+}
+.set-background{
+    background-color:#d0d0d0;
+}
+#selector-space{
+    width:80%;
+    background-color:white;
+    text-align: center;
+    width:80%;
+    transform: translateX(+12.5%);
+}
