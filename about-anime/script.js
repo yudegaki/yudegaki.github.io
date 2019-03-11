@@ -3,7 +3,7 @@ function make_anime_json_url(){
     //url作成
     year=document.getElementById("year").value;
     season=document.getElementById("season").value;
-    var anime_json_url="http://api.moemoe.tokyo/anime/v1/master/"+year+"/"+season;
+    var anime_json_url="https://api.moemoe.tokyo/anime/v1/master/"+year+"/"+season;
     //GETをするよ
     var xhr = new XMLHttpRequest;
     xhr.open("GET", anime_json_url, true);
