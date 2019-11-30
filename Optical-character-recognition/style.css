@@ -1,0 +1,76 @@
+.centering{
+    text-align : center;
+    font-size: 40px;
+}
+.add_border{
+    border : solid 5px #ccc; 
+    padding : 2em ;
+}
+#upload-file{
+    font-size: 40px;
+}
+#top_logo{
+    width :50%;
+    height : 15%;
+}
+#preview{
+    width :70%;
+    height : 70%;
+}
+#preview-target{
+    height:40%
+}
+#ocr-result{
+    color:black;
+}
+body{
+    background-color:#f4f5f7;
+}
+  
+  
+
+/*Submitボタン周りの実装*/
+.btn-real-dent {
+    /*周りの凹み*/
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: rgba(3, 169, 244, 0.54);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    text-align: center;
+    background: #f7f7f7;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.08);
+}
+.btn-real-dent i {
+    /*ボタン自体*/
+    position: absolute;
+    content: '';
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
+    left: 10px;
+    top: 9px;
+    border-radius: 50%;
+    font-size: 65px;
+    background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: solid 2px #b5b5b5;
+}    
+.btn-real-dent .fa:active {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: solid 2px #d8d8d8;
+}
+
+/*box design*/
+.cross_box {
+    margin: 2em auto;
+    padding: 1em;
+    width: 70%;
+    border: 3px dashed #c0c0c0; /*太さ・線種・色*/
+    color: #a0a0a0; /* 文字色 */
+    background-color: #FFF; /* 背景色 */
+    border-radius: 1px; /*角の丸み*/
+}
