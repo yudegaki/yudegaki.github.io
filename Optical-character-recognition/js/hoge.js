@@ -60,6 +60,10 @@ function SendImage(){
 function setImage(){
     let img = document.getElementById('preview');
     img.src = SelectImg;
+    $('#preview').css({
+        'width' : '90%',
+        'height' : '90%'
+    })
     let imgWidth = img.naturalWidth,
         imgHeight = img.naturalHeight;
     console.log('width:' + imgWidth)
