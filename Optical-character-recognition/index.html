@@ -1,32 +1,35 @@
 <html>
     <head></head>
-
     <body>
         <div class = 'centering'><img src = 'images/logo.png' id = 'top_logo'></div>
-        <div id = 'upload-target' class = 'centering cross_box'>
-            ここに画像をドロップしてね
+        <div class = 'left_elements'>
+            <div id = 'upload-target' class = 'cross_box'>
+                ここに画像をドロップしてね
+            </div>
+            <div ><input type = 'file' id = 'upload-file' class = 'style_middle'><br></div>
+    
+            <div id = 'preview-target' class = 'cross_box'>
+                <img id = 'preview' src = 'images/hyouji.png'>
+            </div>
+            <div class = 'centering'>
+                <a class="btn-real-dent" onclick = 'SendImage();'>
+                    <i class="fa fa-upload"></i>
+                </a>
+            </div>
         </div>
-        <div class = 'centering'>もしくは。。。</div>
-        <br>
-        <div class = 'centering'><input type = 'file' id = 'upload-file' class = 'style_middle'><br></div>
-
-        <div id = 'preview-target' class = 'centering cross_box'>
-            <img id = 'preview'>
+        <div class = 'right_elements'> 
+            <div id = 'ocr-result' class = 'cross_box'>
+                OCRの結果がここに表示されます。
+            </div>
+            <div class = 'centering'>
+                <a id="play" class="btn-real-dent" onclick = 'GetVoiceWAV();'>
+                    <i class="fa fa-volume-up"></i>
+                </a>
+            </div>
         </div>
-        <div class = 'centering'>↑この画像を送信します↑</div>
-        <br>
-        <div class = 'centering'>
-            <a class="btn-real-dent" onclick = 'SendImage();'>
-                <i class="fa fa-upload"></i>
-            </a>
-        </div>
-        <br>
-        <div id = 'ocr-result' class = 'centering cross_box'>
-            OCRの結果がここに表示されます。
-        </div>
-        
+        <div id = 'add_loader'></div>
     </body>
-    <script src = 'js/hoge.js'></script>
+    <script src = 'js/index.js'></script>
     <script src = 'js/jquery-3.4.1.min.js'></script>
     <link rel = 'stylesheet'type = 'text/css' href = 'style.css'>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
