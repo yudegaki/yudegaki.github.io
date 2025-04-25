@@ -9,6 +9,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run actionlint
-        uses: rhysd/actionlint@v2
+        uses: rhysd/actionlint@v1.7.7
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
