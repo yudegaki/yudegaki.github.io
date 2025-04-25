@@ -10,5 +10,3 @@ jobs:
 
       - name: Run actionlint
         uses: rhysd/actionlint@v1.7.7
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
