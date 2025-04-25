@@ -1,0 +1,238 @@
+"use client";
+
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { CheckCircle2, XCircle } from "lucide-react";
+import QuizResults from "@/components/quiz/QuizResults";
+import type { QuizAnswer, QuizItem } from "@/types/quiz";
+import { getRandomQuizzes } from "@/lib/quiz";
+
+interface QuizQuestionProps {
+  quizTopic: string;
+  quizCount: number; // クイズの数を指定
+}
+
+export default function QuizQuestion({
+  quizTopic,
+  quizCount,
+}: QuizQuestionProps) {
+  // クイズデータを別ファイルから取得
+  const [quizData] = useState<QuizItem[]>(
+    getRandomQuizzes(quizTopic, quizCount)
+  );
+  const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [isAnswered, setIsAnswered] = useState(false);
+  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [startTime, setStartTime] = useState<number>(Date.now());
+  const [userAnswers, setUserAnswers] = useState<QuizAnswer[]>([]);
+
+  // 現在のクイズ
+  const currentQuiz: QuizItem = quizData[currentQuizIndex];
+
+  // 回答を提出
+  const handleSubmit = () => {
+    if (!selectedAnswer) return;
+
+    setIsAnswered(true);
+    const endTime = Date.now();
+    const timeSpent = Math.round((endTime - startTime) / 1000); // 秒単位に変換
+
+    // 回答を記録
+    const answer: QuizAnswer = {
+      quizId: currentQuiz.id,
+      userAnswer: selectedAnswer,
+      isCorrect: selectedAnswer === currentQuiz.correctAnswer,
+      timeSpent: timeSpent,
+    };
+
+    setUserAnswers([...userAnswers, answer]);
+  };
+
+  // 次のクイズへ進む
+  const handleNext = () => {
+    if (currentQuizIndex < quizData.length - 1) {
+      setCurrentQuizIndex(currentQuizIndex + 1);
+      setSelectedAnswer(null);
+      setIsAnswered(false);
+      setStartTime(Date.now()); // 新しい問題の開始時間をリセット
+    } else {
+      // 全てのクイズが終了
+      setQuizCompleted(true);
+    }
+  };
+
+  // 進捗率を計算
+  const progress = ((currentQuizIndex + 1) / quizData.length) * 100;
+
+  // 正解数を計算
+  const correctAnswers = userAnswers.filter(
+    (answer) => answer.isCorrect
+  ).length;
+
+  // 結果画面
+  if (quizCompleted) {
+    return (
+      <QuizResults
+        quizId={quizTopic}
+        quizData={quizData}
+        userAnswers={userAnswers}
+      />
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between text-sm text-muted-foreground">
+        <div>
+          問題 {currentQuizIndex + 1} / {quizData.length}
+        </div>
+        <div>正解: {correctAnswers}</div>
+      </div>
+
+      <Progress value={progress} className="h-2" />
+
+      <Card className="w-full">
+        <CardHeader>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-xl">{currentQuiz.question}</CardTitle>
+            <div className="flex gap-2">
+              <span
+                className={`text-xs px-2 py-1 rounded-full ${
+                  currentQuiz.difficulty === "easy"
+                    ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
+                    : currentQuiz.difficulty === "medium"
+                    ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
+                    : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
+                }`}
+              >
+                {currentQuiz.difficulty === "easy"
+                  ? "簡単"
+                  : currentQuiz.difficulty === "medium"
+                  ? "普通"
+                  : "難しい"}
+              </span>
+              <span className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                {currentQuiz.category}
+              </span>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <RadioGroup
+            value={selectedAnswer || ""}
+            onValueChange={setSelectedAnswer}
+            className="space-y-4"
+          >
+            {currentQuiz.options.map((option, index) => (
+              <div
+                key={index}
+                className={`flex items-center rounded-lg border p-4 transition-colors hover:bg-muted ${
+                  selectedAnswer === option ? "border-primary bg-muted/50" : ""
+                } ${
+                  isAnswered && option === currentQuiz.correctAnswer
+                    ? "border-green-500 bg-green-50 dark:bg-green-950/20"
+                    : ""
+                } ${
+                  isAnswered &&
+                  selectedAnswer === option &&
+                  option !== currentQuiz.correctAnswer
+                    ? "border-red-500 bg-red-50 dark:bg-red-950/20"
+                    : ""
+                }`}
+                onClick={() => {
+                  if (!isAnswered) {
+                    setSelectedAnswer(option);
+                  }
+                }}
+              >
+                <RadioGroupItem
+                  value={option}
+                  id={`option-${index}`}
+                  className="mr-3"
+                  disabled={isAnswered}
+                />
+                <Label
+                  htmlFor={`option-${index}`}
+                  className="w-full cursor-pointer font-medium"
+                >
+                  {option}
+                </Label>
+                {isAnswered && option === currentQuiz.correctAnswer && (
+                  <CheckCircle2 className="ml-auto h-5 w-5 text-green-500" />
+                )}
+                {isAnswered &&
+                  selectedAnswer === option &&
+                  option !== currentQuiz.correctAnswer && (
+                    <XCircle className="ml-auto h-5 w-5 text-red-500" />
+                  )}
+              </div>
+            ))}
+          </RadioGroup>
+
+          {/* 正誤判定と解説を表示 */}
+          {isAnswered && (
+            <div
+              className={`mt-6 rounded-lg p-4 ${
+                selectedAnswer === currentQuiz.correctAnswer
+                  ? "bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-900/30"
+                  : "bg-red-50 border border-red-200 dark:bg-red-950/20 dark:border-red-900/30"
+              }`}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                {selectedAnswer === currentQuiz.correctAnswer ? (
+                  <>
+                    <CheckCircle2 className="h-5 w-5 text-green-500" />
+                    <h3 className="font-medium text-green-700 dark:text-green-400">
+                      正解です！
+                    </h3>
+                  </>
+                ) : (
+                  <>
+                    <XCircle className="h-5 w-5 text-red-500" />
+                    <h3 className="font-medium text-red-700 dark:text-red-400">
+                      不正解です。正解は「{currentQuiz.correctAnswer}」です。
+                    </h3>
+                  </>
+                )}
+              </div>
+              <div className="mt-2">
+                <h3 className="text-sm font-medium mb-1">解説:</h3>
+                <p className="text-sm text-muted-foreground">
+                  {currentQuiz.explanation}
+                </p>
+              </div>
+            </div>
+          )}
+        </CardContent>
+        <CardFooter>
+          {!isAnswered ? (
+            <Button
+              onClick={handleSubmit}
+              className="w-full"
+              disabled={!selectedAnswer}
+            >
+              回答する
+            </Button>
+          ) : (
+            <Button onClick={handleNext} className="w-full">
+              {currentQuizIndex < quizData.length - 1
+                ? "次の問題へ"
+                : "結果を見る"}
+            </Button>
+          )}
+        </CardFooter>
+      </Card>
+    </div>
+  );
+}
