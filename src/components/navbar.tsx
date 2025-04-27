@@ -81,7 +81,7 @@ const Navbar = ({
               size="icon"
               className="lg:hidden my-3 h-12 w-12"
             >
-              <Menu className="h-20 w-20" />
+              <Menu className="h-12 w-12" />
             </Button>
           </SheetTrigger>
           <SheetContent className="overflow-y-auto w-[85%] sm:max-w-md">
