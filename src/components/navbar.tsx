@@ -1,5 +1,5 @@
+import type React from "react";
 import { GraduationCap, Menu, Earth } from "lucide-react";
-
 import { CiCoffeeBean } from "react-icons/ci";
 
 import {
@@ -37,20 +37,20 @@ const Navbar = ({
     { title: "Home", url: "/" },
     {
       title: "Coffee Quiz",
-      titleIcon: <CiCoffeeBean className="size-5" />,
+      titleIcon: <CiCoffeeBean className="size-5 md:size-6" />,
       url: "#",
       items: [
         {
           title: "コーヒー検定クイズ",
           description:
             "コーヒーインストラクター検定2級レベルのクイズを出題します",
-          icon: <GraduationCap className="size-5 shrink-0" />,
+          icon: <GraduationCap className="size-6 md:size-7 shrink-0" />,
           url: "/coffeequiz",
         },
         {
           title: "コーヒーベルト国名クイズ",
           description: "コーヒーベルト付近の国名を当てるクイズです",
-          icon: <Earth className="size-5 shrink-0" />,
+          icon: <Earth className="size-6 md:size-7 shrink-0" />,
           url: "/coffeebeltquiz",
         },
       ],
@@ -76,16 +76,20 @@ const Navbar = ({
         {/* Button の右寄せのために入れた */}
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="lg:hidden my-3">
-              <Menu className="h-6 w-6" />
+            <Button
+              variant="outline"
+              size="icon"
+              className="lg:hidden my-3 h-12 w-12"
+            >
+              <Menu className="h-20 w-20" />
             </Button>
           </SheetTrigger>
-          <SheetContent className="overflow-y-auto">
+          <SheetContent className="overflow-y-auto w-[85%] sm:max-w-md">
             <div className="flex flex-col gap-6 p-4">
               <Accordion
                 type="single"
                 collapsible
-                className="flex w-full flex-col gap-4 mt-8"
+                className="flex w-full flex-col gap-6 mt-8"
               >
                 {menu.map((item) => renderMobileMenuItem(item))}
               </Accordion>
@@ -133,11 +137,14 @@ const renderMenuItem = (item: MenuItem) => {
 const renderMobileMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
-      <AccordionItem key={item.title} value={item.title} className="">
-        <AccordionTrigger className=" py-0 font-semibold hover:no-underline text-gray-800 hover:text-gray-800 hover:bg-gray-100">
-          <span className="text-lg">{item.title}</span>
+      <AccordionItem key={item.title} value={item.title} className="border-b-2">
+        <AccordionTrigger className="py-3 font-semibold hover:no-underline text-gray-800 hover:text-gray-800 hover:bg-gray-100">
+          <span className="text-xl md:text-2xl flex items-center gap-2">
+            {item.titleIcon && <span className="mr-1">{item.titleIcon}</span>}
+            {item.title}
+          </span>
         </AccordionTrigger>
-        <AccordionContent className="mt-2">
+        <AccordionContent className="mt-3 space-y-4 pb-4">
           {item.items.map((subItem) => (
             <SubMenuLink key={subItem.title} item={subItem} />
           ))}
@@ -150,7 +157,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
     <a
       key={item.title}
       href={item.url}
-      className="text-lg font-bold no-underline hover:underline text-gray-800 hover:text-gray-800 hover:bg-gray-100"
+      className="text-xl md:text-2xl font-bold py-3 block no-underline hover:underline text-gray-800 hover:text-gray-800 hover:bg-gray-100"
       style={{ textDecoration: "none", color: "inherit" }}
     >
       {item.title}
@@ -161,15 +168,17 @@ const renderMobileMenuItem = (item: MenuItem) => {
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (
     <a
-      className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground hover:w-full"
+      className="flex flex-row gap-4 rounded-md p-4 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground hover:w-full"
       style={{ textDecoration: "none", color: "inherit" }}
       href={item.url}
     >
       <div className="text-foreground">{item.icon}</div>
       <div>
-        <div className="text-sm font-semibold">{item.title}</div>
+        <div className="text-lg md:text-xl font-semibold mb-1">
+          {item.title}
+        </div>
         {item.description && (
-          <p className="text-sm leading-snug text-muted-foreground">
+          <p className="text-base md:text-lg leading-snug text-muted-foreground">
             {item.description}
           </p>
         )}
