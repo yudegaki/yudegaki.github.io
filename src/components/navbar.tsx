@@ -37,20 +37,20 @@ const Navbar = ({
     { title: "Home", url: "/" },
     {
       title: "Coffee Quiz",
-      titleIcon: <CiCoffeeBean className="size-5 md:size-6" />,
+      titleIcon: <CiCoffeeBean className="size-5" />,
       url: "#",
       items: [
         {
           title: "コーヒー検定クイズ",
           description:
             "コーヒーインストラクター検定2級レベルのクイズを出題します",
-          icon: <GraduationCap className="size-6 md:size-7 shrink-0" />,
+          icon: <GraduationCap className="size-6 shrink-0" />,
           url: "/coffeequiz",
         },
         {
           title: "コーヒーベルト国名クイズ",
           description: "コーヒーベルト付近の国名を当てるクイズです",
-          icon: <Earth className="size-6 md:size-7 shrink-0" />,
+          icon: <Earth className="size-6 shrink-0" />,
           url: "/coffeebeltquiz",
         },
       ],
@@ -174,11 +174,9 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
     >
       <div className="text-foreground">{item.icon}</div>
       <div>
-        <div className="text-lg md:text-xl font-semibold mb-1">
-          {item.title}
-        </div>
+        <div className="text-base font-semibold mb-1">{item.title}</div>
         {item.description && (
-          <p className="text-base md:text-lg leading-snug text-muted-foreground">
+          <p className="text-sm leading-snug text-muted-foreground">
             {item.description}
           </p>
         )}
