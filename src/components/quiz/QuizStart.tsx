@@ -32,33 +32,42 @@ export default function QuizStartScreen({
   }
 
   return (
-    <div className="flex items-center justify-center p-4">
-      <Card className="w-full max-w-md mx-auto">
-        <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold">{title}</CardTitle>
+    <div className="flex items-center justify-center p-4 md:p-8">
+      <Card className="w-full max-w-md md:max-w-lg mx-auto shadow-lg">
+        <CardHeader className="text-center p-6 md:p-8">
+          <CardTitle className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            {title}
+          </CardTitle>
         </CardHeader>
-        <CardContent className="text-center">
-          <p className="mb-6 whitespace-pre-line">{description}</p>
-          <div className="flex flex-col items-center space-y-2 mt-4">
-            <label htmlFor="questionCount" className="text-sm font-medium">
+        <CardContent className="text-center px-6 md:px-8 pb-8">
+          <p className="mb-8 whitespace-pre-line text-lg md:text-xl">
+            {description}
+          </p>
+          <div className="flex flex-col items-center space-y-4 mt-6">
+            <label
+              htmlFor="questionCount"
+              className="text-lg md:text-xl font-medium"
+            >
               問題数を選択してください
             </label>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-4 mt-2">
               <Button
                 variant="outline"
-                size="sm"
+                size="lg"
+                className="h-14 w-14 text-2xl font-bold"
                 onClick={() =>
                   setQuestionCount((prev) => Math.max(1, prev - 1))
                 }
               >
                 -
               </Button>
-              <div className="w-16 text-center font-medium text-lg">
+              <div className="w-20 text-center font-bold text-3xl">
                 {questionCount}
               </div>
               <Button
                 variant="outline"
-                size="sm"
+                size="lg"
+                className="h-14 w-14 text-2xl font-bold"
                 onClick={() =>
                   setQuestionCount((prev) => Math.min(20, prev + 1))
                 }
@@ -68,11 +77,11 @@ export default function QuizStartScreen({
             </div>
           </div>
         </CardContent>
-        <CardFooter className="flex justify-center">
+        <CardFooter className="flex justify-center p-6 md:p-8 pt-0">
           <Button
             size="lg"
             onClick={handleStartQuiz}
-            className="w-full max-w-xs text-lg py-6"
+            className="w-full max-w-xs text-xl md:text-2xl py-8 rounded-xl font-bold"
           >
             クイズをスタート
           </Button>
