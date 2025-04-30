@@ -106,26 +106,6 @@ export default function QuizQuestion({
         <CardHeader>
           <div className="flex justify-between items-center">
             <CardTitle className="text-xl">{currentQuiz.question}</CardTitle>
-            <div className="flex gap-2">
-              <span
-                className={`text-xs px-2 py-1 rounded-full ${
-                  currentQuiz.difficulty === "easy"
-                    ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
-                    : currentQuiz.difficulty === "medium"
-                    ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
-                    : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
-                }`}
-              >
-                {currentQuiz.difficulty === "easy"
-                  ? "簡単"
-                  : currentQuiz.difficulty === "medium"
-                  ? "普通"
-                  : "難しい"}
-              </span>
-              <span className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-                {currentQuiz.category}
-              </span>
-            </div>
           </div>
         </CardHeader>
         <CardContent>
@@ -166,7 +146,7 @@ export default function QuizQuestion({
                   htmlFor={`option-${index}`}
                   className="w-full cursor-pointer font-medium"
                 >
-                  {option}
+                  &nbsp;{option}
                 </Label>
                 {isAnswered && option === currentQuiz.correctAnswer && (
                   <CheckCircle2 className="ml-auto h-5 w-5 text-green-500" />
