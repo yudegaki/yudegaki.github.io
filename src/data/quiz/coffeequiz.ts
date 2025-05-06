@@ -253,10 +253,134 @@ const coffeeGradingQuizzes: QuizItem[] = [
   },
 ];
 
+const roastingQuizzes: QuizItem[] = [
+  {
+    id: "roasting1",
+    question: "シティローストの焙煎度合いは次のうちどれ？",
+    options: ["浅煎り", "中煎り", "中深煎り", "深煎り"],
+    correctAnswer: "中煎り",
+    category: "焙煎",
+    difficulty: "easy",
+    explanation:
+      "シティローストはファーストクラック後やや進めた中煎りで、バランスの良い味わいになります。",
+  },
+  {
+    id: "roasting2",
+    question: "「ミディアムロースト」はどのような風味特徴を持つ？",
+    options: [
+      "強い酸味と軽いボディ",
+      "スモーキーな香り",
+      "焦げた苦味",
+      "甘味とバランスの取れた味",
+    ],
+    correctAnswer: "甘味とバランスの取れた味",
+    category: "焙煎",
+    difficulty: "easy",
+    explanation:
+      "ミディアムローストは酸味と苦味のバランスが取れた焙煎で、甘味も感じられることが多いです。",
+  },
+  {
+    id: "roasting3",
+    question: "フレンチローストはどの程度の焙煎？",
+    options: ["浅煎り", "中煎り", "深煎り", "極深煎り"],
+    correctAnswer: "極深煎り",
+    category: "焙煎",
+    difficulty: "medium",
+    explanation:
+      "フレンチローストはセカンドクラック後、かなり進めた焙煎で、ほとんど炭化寸前。苦味とスモーキーさが特徴です。",
+  },
+  {
+    id: "roasting4",
+    question: "焙煎で豆の重量はどう変化する？",
+    options: ["増える", "変わらない", "減る", "水分によって異なる"],
+    correctAnswer: "減る",
+    category: "焙煎",
+    difficulty: "easy",
+    explanation:
+      "焙煎で豆内部の水分が蒸発するため、重量は約15〜20%減少します。",
+  },
+  {
+    id: "roasting5",
+    question: "焙煎時にコーヒー豆の色が変化するのは主に何の反応？",
+    options: ["カルメラ反応", "メイラード反応", "エステル化反応", "中和反応"],
+    correctAnswer: "メイラード反応",
+    category: "焙煎",
+    difficulty: "hard",
+    explanation:
+      "メイラード反応はアミノ酸と糖の化学反応で、コーヒーに香ばしさや褐色をもたらします。",
+  },
+  {
+    id: "roasting6",
+    question: "焙煎後、豆のガスを抜くために行う工程は？",
+    options: ["ディガッシング", "カッピング", "アジテーション", "ハンドピック"],
+    correctAnswer: "ディガッシング",
+    category: "焙煎",
+    difficulty: "medium",
+    explanation:
+      "ディガッシング（脱ガス）は、焙煎後に発生する炭酸ガスなどを自然に放出させる工程です。抽出への影響もあります。",
+  },
+  {
+    id: "roasting7",
+    question: "焙煎において豆の色を測定するために使われる機器は？",
+    options: ["ブリックス計", "色差計", "ガスクロマトグラフ", "比重計"],
+    correctAnswer: "色差計",
+    category: "焙煎",
+    difficulty: "hard",
+    explanation:
+      "色差計(Color Meter)は焙煎豆の色度を数値化し、焙煎度の管理に使用されます。",
+  },
+  {
+    id: "roasting8",
+    question: "焙煎機において「ドラムロースター」の特徴は？",
+    options: [
+      "熱風で豆を煎る",
+      "豆を蒸気で煎る",
+      "回転するドラム内で加熱する",
+      "真空状態で煎る",
+    ],
+    correctAnswer: "回転するドラム内で加熱する",
+    category: "焙煎",
+    difficulty: "easy",
+    explanation:
+      "ドラムロースターは回転するドラムの中で豆を撹拌しながら直接加熱または間接加熱します。",
+  },
+  {
+    id: "roasting9",
+    question: "焙煎によって酸味が減るのはなぜ？",
+    options: [
+      "糖が焦げるから",
+      "有機酸が分解されるから",
+      "水分が蒸発するから",
+      "タンニンが出るから",
+    ],
+    correctAnswer: "有機酸が分解されるから",
+    category: "焙煎",
+    difficulty: "medium",
+    explanation:
+      "焙煎が進むと有機酸（クエン酸など）が熱で分解され、酸味が弱まります。",
+  },
+  {
+    id: "roasting10",
+    question: "焙煎直後の豆をすぐに密閉すると何が起こる可能性がある？",
+    options: [
+      "酸化が進む",
+      "風味が飛ぶ",
+      "袋が膨張・破裂する",
+      "香りが強くなる",
+    ],
+    correctAnswer: "袋が膨張・破裂する",
+    category: "焙煎",
+    difficulty: "medium",
+    explanation:
+      "焙煎直後の豆は炭酸ガスを大量に放出するため、密閉すると袋が膨張し、破裂する恐れがあります。",
+  },
+];
+
 // すべてのクイズデータを結合
 export const allCoffeeQuizzes: QuizItem[] = [
   ...twoChoiceQuizzes,
   ...coffeeGradingQuizzes,
+  ...roastingQuizzes,
 ];
 
 export type coffeeQuizCategories =
