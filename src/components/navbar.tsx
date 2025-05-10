@@ -1,14 +1,14 @@
-import type React from "react";
-import { GraduationCap, Menu, Earth } from "lucide-react";
-import { CiCoffeeBean } from "react-icons/ci";
+import type React from 'react';
+import { GraduationCap, Menu, Earth } from 'lucide-react';
+import { CiCoffeeBean } from 'react-icons/ci';
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,8 +16,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+} from '@/components/ui/navigation-menu';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 interface MenuItem {
   titleIcon?: React.ReactNode;
@@ -34,24 +34,25 @@ interface NavbarProps {
 
 const Navbar = ({
   menu = [
-    { title: "Home", url: "/" },
+    { title: 'Home', url: '/' },
     {
-      title: "Coffee Quiz",
+      title: 'Coffee Quiz',
       titleIcon: <CiCoffeeBean className="size-5" />,
-      url: "#",
+      url: '#',
       items: [
         {
-          title: "コーヒー検定クイズ",
+          title: 'コーヒー検定クイズ',
           description:
-            "コーヒーインストラクター検定2級レベルのクイズを出題します",
+            'コーヒーインストラクター検定2級レベルのクイズを出題します',
           icon: <GraduationCap className="size-6 shrink-0" />,
-          url: "/coffeequiz",
+          url: '/coffeequiz',
         },
         {
-          title: "コーヒーベルト国名クイズ",
-          description: "コーヒーベルト付近の国名を当てるクイズです",
+          title: 'GeoCoffee Quiz',
+          description:
+            'コーヒーに関する問題の答えを世界地図から国を選んで答えるクイズです。',
           icon: <Earth className="size-6 shrink-0" />,
-          url: "/coffeebeltquiz",
+          url: '/geo-coffee-quiz',
         },
       ],
     },
@@ -125,7 +126,7 @@ const renderMenuItem = (item: MenuItem) => {
       <NavigationMenuLink
         href={item.url}
         className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-md font-medium transition-colors hover:bg-muted"
-        style={{ textDecoration: "none", color: "inherit" }}
+        style={{ textDecoration: 'none', color: 'inherit' }}
       >
         {item.titleIcon}
         {item.title}
@@ -158,7 +159,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
       key={item.title}
       href={item.url}
       className="text-xl md:text-2xl font-bold py-3 block no-underline hover:underline text-gray-800 hover:text-gray-800 hover:bg-gray-100"
-      style={{ textDecoration: "none", color: "inherit" }}
+      style={{ textDecoration: 'none', color: 'inherit' }}
     >
       {item.title}
     </a>
@@ -169,7 +170,7 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (
     <a
       className="flex flex-row gap-4 rounded-md p-4 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground hover:w-full"
-      style={{ textDecoration: "none", color: "inherit" }}
+      style={{ textDecoration: 'none', color: 'inherit' }}
       href={item.url}
     >
       <div className="text-foreground">{item.icon}</div>

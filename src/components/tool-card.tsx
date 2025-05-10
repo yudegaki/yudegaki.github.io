@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { ExternalLink } from 'lucide-react';
 
 export type ToolCardProps = {
   icon: ReactNode;
