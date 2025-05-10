@@ -21,13 +21,6 @@ const southeastAsiaQuizzes: CountryQuiz[] = [
     explanation:
       'マンデリンはインドネシアのスマトラ島で生産されるコーヒー豆です。',
   },
-  {
-    id: 'southeast-asia-4',
-    question: '特定銘柄「マンデリン」で知られるコーヒー豆の産地はどこ？',
-    answer: 'ID',
-    explanation:
-      'マンデリンはインドネシアのスマトラ島で生産されるコーヒー豆です。',
-  },
 ];
 
 const africaQuizzes: CountryQuiz[] = [
