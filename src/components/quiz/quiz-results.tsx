@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import type { QuizItem, QuizAnswer } from "@/types/quiz";
-import { CheckCircle2, Clock, Medal, XCircle } from "lucide-react";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import type { QuizItem, QuizAnswer } from '@/types/quiz';
+import { CheckCircle2, Clock, Medal, XCircle } from 'lucide-react';
 import {
   PieChart,
   Pie,
@@ -21,7 +21,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from "recharts";
+} from 'recharts';
 
 interface QuizResultsProps {
   quizId: string;
@@ -34,7 +34,7 @@ export default function QuizResults({
   quizData,
   userAnswers,
 }: QuizResultsProps) {
-  const [activeTab, setActiveTab] = useState("summary");
+  const [activeTab, setActiveTab] = useState('summary');
 
   // 正解数を計算
   const correctAnswers = userAnswers.filter(
@@ -45,11 +45,11 @@ export default function QuizResults({
 
   // 円グラフのデータ
   const pieData = [
-    { name: "正解", value: correctAnswers, color: "#10b981" },
+    { name: '正解', value: correctAnswers, color: '#10b981' },
     {
-      name: "不正解",
+      name: '不正解',
       value: totalQuestions - correctAnswers,
-      color: "#ef4444",
+      color: '#ef4444',
     },
   ];
 
@@ -80,12 +80,12 @@ export default function QuizResults({
 
   // 難易度別の成績データを作成
   const difficultyData = [
-    { name: "簡単", value: calculateDifficultyScore("easy") },
-    { name: "普通", value: calculateDifficultyScore("medium") },
-    { name: "難しい", value: calculateDifficultyScore("hard") },
+    { name: '簡単', value: calculateDifficultyScore('easy') },
+    { name: '普通', value: calculateDifficultyScore('medium') },
+    { name: '難しい', value: calculateDifficultyScore('hard') },
   ].filter((item) => item.value !== null);
 
-  function calculateDifficultyScore(difficulty: "easy" | "medium" | "hard") {
+  function calculateDifficultyScore(difficulty: 'easy' | 'medium' | 'hard') {
     const difficultyQuizzes = quizData.filter(
       (quiz) => quiz.difficulty === difficulty
     );
@@ -112,14 +112,14 @@ export default function QuizResults({
   // 成績評価を取得
   const getGrade = (percentage: number) => {
     if (percentage >= 90)
-      return { grade: "S", comment: "素晴らしい！完璧に近い成績です！" };
-    if (percentage >= 80) return { grade: "A", comment: "優秀な成績です！" };
-    if (percentage >= 70) return { grade: "B", comment: "良い成績です！" };
+      return { grade: 'S', comment: '素晴らしい！完璧に近い成績です！' };
+    if (percentage >= 80) return { grade: 'A', comment: '優秀な成績です！' };
+    if (percentage >= 70) return { grade: 'B', comment: '良い成績です！' };
     if (percentage >= 60)
-      return { grade: "C", comment: "まずまずの成績です。" };
+      return { grade: 'C', comment: 'まずまずの成績です。' };
     if (percentage >= 50)
-      return { grade: "D", comment: "もう少し頑張りましょう。" };
-    return { grade: "F", comment: "復習が必要です。" };
+      return { grade: 'D', comment: 'もう少し頑張りましょう。' };
+    return { grade: 'F', comment: '復習が必要です。' };
   };
 
   const gradeInfo = getGrade(scorePercentage);
@@ -228,7 +228,7 @@ export default function QuizResults({
                     data={userAnswers.map((answer, index) => ({
                       name: `問題${index + 1}`,
                       時間: answer.timeSpent,
-                      正解: answer.isCorrect ? "○" : "×",
+                      正解: answer.isCorrect ? '○' : '×',
                     }))}
                   >
                     <CartesianGrid strokeDasharray="3 3" />
@@ -253,8 +253,8 @@ export default function QuizResults({
                     key={quiz.id}
                     className={`border-l-4 ${
                       answer.isCorrect
-                        ? "border-l-green-500"
-                        : "border-l-red-500"
+                        ? 'border-l-green-500'
+                        : 'border-l-red-500'
                     }`}
                   >
                     <CardHeader className="py-3">
@@ -271,12 +271,12 @@ export default function QuizResults({
                             )}
                           </div>
                           <div className="text-sm text-muted-foreground">
-                            カテゴリ: {quiz.category} | 難易度:{" "}
-                            {quiz.difficulty === "easy"
-                              ? "簡単"
-                              : quiz.difficulty === "medium"
-                              ? "普通"
-                              : "難しい"}
+                            カテゴリ: {quiz.category} | 難易度:{' '}
+                            {quiz.difficulty === 'easy'
+                              ? '簡単'
+                              : quiz.difficulty === 'medium'
+                              ? '普通'
+                              : '難しい'}
                           </div>
                         </div>
                         <div className="flex items-center gap-1 text-sm text-muted-foreground">
@@ -295,8 +295,8 @@ export default function QuizResults({
                           <span
                             className={
                               answer.isCorrect
-                                ? "text-green-600"
-                                : "text-red-600"
+                                ? 'text-green-600'
+                                : 'text-red-600'
                             }
                           >
                             {answer.userAnswer}
