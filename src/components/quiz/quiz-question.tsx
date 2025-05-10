@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { CheckCircle2, XCircle } from "lucide-react";
-import QuizResults from "@/components/quiz/quiz-results";
-import type { QuizAnswer, QuizItem } from "@/types/quiz";
-import { getRandomQuizzes } from "@/lib/quiz";
+} from '@/components/ui/card';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
+import { CheckCircle2, XCircle } from 'lucide-react';
+import QuizResults from '@/components/quiz/quiz-results';
+import type { QuizAnswer, QuizItem } from '@/types/quiz';
+import { getRandomQuizzes } from '@/lib/quiz';
 
 interface QuizQuestionProps {
   quizTopic: string;
@@ -110,7 +110,7 @@ export default function QuizQuestion({
         </CardHeader>
         <CardContent className="pt-4">
           <RadioGroup
-            value={selectedAnswer || ""}
+            value={selectedAnswer || ''}
             onValueChange={setSelectedAnswer}
             className="space-y-4"
           >
@@ -118,17 +118,17 @@ export default function QuizQuestion({
               <div
                 key={index}
                 className={`flex items-center rounded-lg border p-4 sm:p-5 transition-colors hover:bg-muted ${
-                  selectedAnswer === option ? "border-primary bg-muted/50" : ""
+                  selectedAnswer === option ? 'border-primary bg-muted/50' : ''
                 } ${
                   isAnswered && option === currentQuiz.correctAnswer
-                    ? "border-green-500 bg-green-50 dark:bg-green-950/20"
-                    : ""
+                    ? 'border-green-500 bg-green-50 dark:bg-green-950/20'
+                    : ''
                 } ${
                   isAnswered &&
                   selectedAnswer === option &&
                   option !== currentQuiz.correctAnswer
-                    ? "border-red-500 bg-red-50 dark:bg-red-950/20"
-                    : ""
+                    ? 'border-red-500 bg-red-50 dark:bg-red-950/20'
+                    : ''
                 }`}
                 onClick={() => {
                   if (!isAnswered) {
@@ -165,8 +165,8 @@ export default function QuizQuestion({
             <div
               className={`mt-6 rounded-lg p-4 sm:p-5 ${
                 selectedAnswer === currentQuiz.correctAnswer
-                  ? "bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-900/30"
-                  : "bg-red-50 border border-red-200 dark:bg-red-950/20 dark:border-red-900/30"
+                  ? 'bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-900/30'
+                  : 'bg-red-50 border border-red-200 dark:bg-red-950/20 dark:border-red-900/30'
               }`}
             >
               <div className="flex items-center gap-2 mb-3">
@@ -210,8 +210,8 @@ export default function QuizQuestion({
               className="w-full py-6 md:py-4 text-lg md:text-base"
             >
               {currentQuizIndex < quizData.length - 1
-                ? "次の問題へ"
-                : "結果を見る"}
+                ? '次の問題へ'
+                : '結果を見る'}
             </Button>
           )}
         </CardFooter>

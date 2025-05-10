@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./index.css";
-import Home from "@/pages/Home";
-import CoffeeQuiz from "@/pages/CoffeeQuiz";
-import GeoCoffeeQuiz from "@/pages/GeoCoffeeQuiz";
-import Navbar from "@/components/navbar";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './index.css';
+import Home from '@/pages/Home';
+import CoffeeQuiz from '@/pages/CoffeeQuiz';
+import GeoCoffeeQuiz from '@/pages/GeoCoffeeQuiz';
+import Navbar from '@/components/navbar';
 
 function App() {
   return (

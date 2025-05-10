@@ -1,4 +1,4 @@
-import { CountryCode } from "./country";
+import { CountryCode } from './country';
 
 export interface CountryQuiz {
   id: string;
