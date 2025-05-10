@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import {
   Card,
@@ -13,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { CheckCircle2, XCircle } from "lucide-react";
-import QuizResults from "@/components/quiz/QuizResults";
+import QuizResults from "@/components/quiz/quiz-results";
 import type { QuizAnswer, QuizItem } from "@/types/quiz";
 import { getRandomQuizzes } from "@/lib/quiz";
 

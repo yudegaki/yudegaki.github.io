@@ -1,26 +1,36 @@
-import { Coffee, Earth } from "lucide-react";
-import { SectionHeader } from "@/components/section-header";
-import { SocialLink, SocialLinkProps } from "@/components/social-link";
-import { ToolCard, ToolCardProps } from "@/components/tool-card";
+import { Coffee, Earth, GraduationCap } from 'lucide-react';
+import { SectionHeader } from '@/components/section-header';
+import { SocialLink, SocialLinkProps } from '@/components/social-link';
+import { ToolCard, ToolCardProps } from '@/components/tool-card';
 
-export default function Home() {
+const Home = () => {
   // ツールデータ
   const tools: ToolCardProps[] = [
     {
       icon: <Coffee className="h-6 w-6 text-gray-700" />,
-      title: "コーヒー検定クイズ",
+      title: 'コーヒー検定クイズ',
       description:
-        "コーヒーインストラクター2級レベルの知識が試されるクイズです。",
-      link: "/coffeequiz",
-      linkText: "問題に挑戦する",
+        'コーヒーインストラクター2級レベルの知識が試されるクイズです。',
+      link: '/coffeequiz',
+      linkText: '問題に挑戦する',
       isComingSoon: false,
     },
     {
       icon: <Earth className="h-6 w-6 text-gray-700" />,
-      title: "コーヒーベルト国名クイズ",
-      description: "コーヒーベルトの国に関するクイズです。",
-      link: "/coffeebeltquiz",
-      linkText: "準備中",
+      title: 'GeoCoffee Quiz',
+      description:
+        'コーヒーに関する問題の答えを世界地図から国を選んで答えるクイズです。',
+      link: '/geo-coffee-quiz',
+      linkText: '問題に挑戦する',
+      isComingSoon: false,
+    },
+    {
+      icon: <GraduationCap className="h-6 w-6 text-gray-700" />,
+      title: 'GeoCoffee Education',
+      description:
+        '地図をクリックして気になる国のコーヒー情報を調べることができます。',
+      link: '',
+      linkText: '準備中',
       isComingSoon: true,
     },
   ];
@@ -28,24 +38,24 @@ export default function Home() {
   // SNSデータ
   const socialLinks: SocialLinkProps[] = [
     {
-      name: "Twitter",
+      name: 'Twitter',
       icon: <img src="/twitter.svg" alt="Twitter" className="h-6 w-6" />,
-      link: "https://x.com/yd00245",
+      link: 'https://x.com/yd00245',
     },
     {
-      name: "GitHub",
+      name: 'GitHub',
       icon: <img src="/github.svg" alt="GitHub" className="h-6 w-6" />,
-      link: "https://github.com/yudegaki",
+      link: 'https://github.com/yudegaki',
     },
     {
-      name: "YouTube",
+      name: 'YouTube',
       icon: <img src="/youtube.svg" alt="GitHub" className="h-6 w-6" />,
-      link: "https://www.youtube.com/@%E3%82%86%E3%81%A7%E3%81%8C%E3%81%8D%E3%81%AE%E3%81%B8%E3%82%84",
+      link: 'https://www.youtube.com/@%E3%82%86%E3%81%A7%E3%81%8C%E3%81%8D%E3%81%AE%E3%81%B8%E3%82%84',
     },
     {
-      name: "Hatena Blog",
+      name: 'Hatena Blog',
       icon: <img src="/hatena.svg" alt="Hatena Blog" className="h-6 w-6" />,
-      link: "https://yudegaki.hatenablog.com/",
+      link: 'https://yudegaki.hatenablog.com/',
     },
   ];
 
@@ -61,7 +71,7 @@ export default function Home() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div
                 className="mx-auto relative aspect-square overflow-hidden rounded-full border-8 border-white shadow-xl order-2 lg:order-1"
-                style={{ maxWidth: "400px", width: "45%" }}
+                style={{ maxWidth: '400px', width: '45%' }}
               >
                 <img
                   src="/yudegaki.png?height=400&width=400"
@@ -150,4 +160,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;

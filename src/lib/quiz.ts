@@ -1,9 +1,9 @@
-import { allCoffeeQuizzes } from "@/data/quiz/coffeequiz";
-import { QuizItem } from "@/types/quiz";
+import { allCoffeeQuizzes } from '@/data/quiz/coffeequiz';
+import { QuizItem } from '@/types/quiz';
 
 const getQuizData = (quizTopic: string): QuizItem[] => {
   switch (quizTopic) {
-    case "coffeequiz":
+    case 'coffeequiz':
       return allCoffeeQuizzes;
     default:
       return [];
@@ -28,7 +28,7 @@ export const getQuizzesByCategory = (
 
 export const getQuizzesByDifficulty = (
   quizTopic: string,
-  difficulty: "easy" | "medium" | "hard"
+  difficulty: 'easy' | 'medium' | 'hard'
 ): QuizItem[] => {
   return getQuizData(quizTopic).filter(
     (quiz) => quiz.difficulty === difficulty
