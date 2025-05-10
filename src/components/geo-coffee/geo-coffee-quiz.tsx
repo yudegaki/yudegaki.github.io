@@ -21,7 +21,7 @@ interface GeoCoffeeQuizProps {
   quizCount: number;
 }
 
-const REDIRECT_URL = "/coffee-map-quiz";
+const REDIRECT_URL = "/geo-coffee-quiz";
 const MAX_QUIZ_COUNT = 20;
 
 export const GeoCoffeeQuiz = ({
