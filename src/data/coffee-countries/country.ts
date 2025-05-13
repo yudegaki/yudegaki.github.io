@@ -27,6 +27,7 @@ const africaData: RegionData = {
   countryCodeMapping: {
     egypt: 'EG',
     nigeria: 'NG',
+    yemen: 'YE',
     southafrica: 'ZA',
     kenya: 'KE',
     morocco: 'MA',

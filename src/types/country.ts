@@ -70,6 +70,7 @@ type africaCountryCode =
   | 'LS'
   | 'NA'
   | 'SZ'
+  | 'YE'
   | 'ZA';
 
 type centralAmericaCountryCode =
