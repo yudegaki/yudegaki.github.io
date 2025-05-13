@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { RegionData } from "@/types/country";
-import { Globe } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { RegionData } from '@/types/country';
+import { Globe } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import { getAllRegionsData, getRegionDataById } from "@/lib/country";
-import { getCountryQuizzesLengthById } from "@/lib/country-quiz";
-import { GeoCoffeeQuiz } from "@/components/geo-coffee/geo-coffee-quiz";
+import { getAllRegionsData, getRegionDataById } from '@/lib/country';
+import { getCountryQuizzesLengthById } from '@/lib/country-quiz';
+import { GeoCoffeeQuiz } from '@/components/geo-coffee/geo-coffee-quiz';
 
 const MIN_QUIZ_COUNT = 1;
 const DEFAULT_QUIZ_COUNT = 10;
@@ -45,7 +45,7 @@ export const GeoCoffeeQuizStart = () => {
       <Card className="w-full max-w-md md:max-w-lg mx-auto shadow-lg">
         <CardHeader className="text-center p-6 md:p-8">
           <CardTitle className="text-3xl md:text-3xl lg:text-4xl font-bold">
-            コーヒー国当てクイズ
+            GeoCoffee Quiz
           </CardTitle>
         </CardHeader>
         <CardContent className="text-center px-6 md:px-8 pb-8">
@@ -60,8 +60,8 @@ export const GeoCoffeeQuizStart = () => {
                 key={region.id}
                 className={`cursor-pointer transition-all ${
                   selectedRegionId === region.id
-                    ? "border-primary border-2 shadow-md"
-                    : "hover:border-primary/50 hover:shadow-sm"
+                    ? 'border-primary border-2 shadow-md'
+                    : 'hover:border-primary/50 hover:shadow-sm'
                 }`}
                 onClick={() => handleRegionSelect(region.id)}
               >

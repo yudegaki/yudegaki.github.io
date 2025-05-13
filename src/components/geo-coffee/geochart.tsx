@@ -1,5 +1,5 @@
-import { CountryCode } from "@/types/country";
-import { useEffect, useRef, useState } from "react";
+import { CountryCode } from '@/types/country';
+import { useEffect, useRef, useState } from 'react';
 
 interface GeoChartProps {
   onSelectCountry: (countryCode: string) => void;
@@ -32,7 +32,7 @@ export const GeoChart = ({
   useEffect(() => {
     const loadGoogleCharts = () => {
       if (
-        typeof window !== "undefined" &&
+        typeof window !== 'undefined' &&
         window.google &&
         window.google.charts
       ) {
@@ -40,14 +40,14 @@ export const GeoChart = ({
       }
 
       return new Promise<void>((resolve) => {
-        const script = document.createElement("script");
-        script.src = "https://www.gstatic.com/charts/loader.js";
+        const script = document.createElement('script');
+        script.src = 'https://www.gstatic.com/charts/loader.js';
         script.async = true;
         script.onload = () => {
           if (window.google && window.google.charts) {
-            window.google.charts.load("current", {
-              packages: ["geochart"],
-              mapsApiKey: "",
+            window.google.charts.load('current', {
+              packages: ['geochart'],
+              mapsApiKey: '',
             });
             window.google.charts.setOnLoadCallback(() => {
               setIsLoaded(true);
@@ -64,8 +64,8 @@ export const GeoChart = ({
 
   const drawChart = () => {
     const data = new window.google.visualization.DataTable();
-    data.addColumn("string", "Country");
-    data.addColumn("number", "Value");
+    data.addColumn('string', 'Country');
+    data.addColumn('number', 'Value');
 
     const countryValues: Record<string, number> = {};
 
@@ -90,31 +90,31 @@ export const GeoChart = ({
 
     const options = {
       region: regionCode,
-      resolution: "countries",
-      displayMode: "regions",
-      backgroundColor: "#ffffff",
-      datalessRegionColor: "#f1f5f9",
-      defaultColor: "#e2e8f0",
+      resolution: 'countries',
+      displayMode: 'regions',
+      backgroundColor: '#ffffff',
+      datalessRegionColor: '#f1f5f9',
+      defaultColor: '#e2e8f0',
       colorAxis: {
         colors: collectAnswer
-          ? ["#8B0000", "#006400", "#e2e8f0"]
-          : ["#006400", "#e2e8f0"],
+          ? ['#8B0000', '#006400', '#e2e8f0']
+          : ['#006400', '#e2e8f0'],
       },
       width: geoChartWidth,
-      legend: "none",
-      tooltip: { trigger: "none" },
+      legend: 'none',
+      tooltip: { trigger: 'none' },
       enableRegionInteractivity: true,
       keepAspectRatio: true,
     };
 
     const newChart = new window.google.visualization.GeoChart(chartRef.current);
 
-    window.google.visualization.events.addListener(newChart, "select", () => {
+    window.google.visualization.events.addListener(newChart, 'select', () => {
       const selection = newChart.getSelection();
       if (selection.length === 0) return;
 
       const countryCode = data.getValue(selection[0].row, 0);
-      console.log("Selected country code:", countryCode);
+      console.log('Selected country code:', countryCode);
       setSelectedCountry(countryCode);
       onSelectCountry(countryCode);
     });
@@ -133,9 +133,9 @@ export const GeoChart = ({
       }
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, [isLoaded, selectedCountry, collectAnswer]);
 

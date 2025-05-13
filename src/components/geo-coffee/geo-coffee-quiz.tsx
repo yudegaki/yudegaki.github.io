@@ -1,27 +1,27 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState } from 'react';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Check, Trophy, CheckCircle2, XCircle } from "lucide-react";
-import { GeoChart } from "@/components/geo-coffee/geochart";
-import type { RegionData } from "@/types/country";
-import { Progress } from "@/components/ui/progress";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Check, Trophy, CheckCircle2, XCircle } from 'lucide-react';
+import { GeoChart } from '@/components/geo-coffee/geochart';
+import type { RegionData } from '@/types/country';
+import { Progress } from '@/components/ui/progress';
 import {
   getRandomCountryQuizzes,
   getCountryQuizzesLengthById,
-} from "@/lib/country-quiz";
+} from '@/lib/country-quiz';
 
 interface GeoCoffeeQuizProps {
   selectedRegion: RegionData;
   quizCount: number;
 }
 
-const REDIRECT_URL = "/geo-coffee-quiz";
+const REDIRECT_URL = '/geo-coffee-quiz';
 const MAX_QUIZ_COUNT = 20;
 
 export const GeoCoffeeQuiz = ({
@@ -69,8 +69,8 @@ export const GeoCoffeeQuiz = ({
     <div
       className={`mt-6 rounded-lg p-4 sm:p-5 ${
         isCorrect
-          ? "bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-900/30"
-          : "bg-red-50 border border-red-200 dark:bg-red-950/20 dark:border-red-900/30"
+          ? 'bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-900/30'
+          : 'bg-red-50 border border-red-200 dark:bg-red-950/20 dark:border-red-900/30'
       }`}
     >
       <div className="flex items-center gap-2 mb-3">
@@ -117,20 +117,20 @@ export const GeoCoffeeQuiz = ({
           <Alert
             className={
               score === quizCountLimit
-                ? "bg-green-50 mb-4"
+                ? 'bg-green-50 mb-4'
                 : score >= quizCountLimit * 0.7
-                ? "bg-blue-50 mb-4"
-                : "bg-amber-50 mb-4"
+                ? 'bg-blue-50 mb-4'
+                : 'bg-amber-50 mb-4'
             }
           >
             <AlertDescription className="flex items-center gap-2">
               <Check className="h-4 w-4 text-green-500" />
               <span>
                 {score === quizCountLimit
-                  ? "素晴らしい！満点です！"
+                  ? '素晴らしい！満点です！'
                   : score >= quizCountLimit * 0.7
-                  ? "よくできました！"
-                  : "もう一度挑戦してみましょう！"}
+                  ? 'よくできました！'
+                  : 'もう一度挑戦してみましょう！'}
               </span>
             </AlertDescription>
           </Alert>
@@ -187,9 +187,9 @@ export const GeoCoffeeQuiz = ({
           >
             {isAnswered
               ? currentQuizIndex < quizData.length - 1
-                ? "次の問題へ"
-                : "結果を見る"
-              : "回答する"}
+                ? '次の問題へ'
+                : '結果を見る'
+              : '回答する'}
           </Button>
         </CardFooter>
       </Card>
