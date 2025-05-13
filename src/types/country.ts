@@ -42,7 +42,6 @@ type africaCountryCode =
   | 'SN'
   | 'AO'
   | 'CD'
-  | 'ZR' // ZR is outdated; replaced by CD (Congo, The Democratic Republic of the)
   | 'CF'
   | 'CG'
   | 'CM'
@@ -73,6 +72,67 @@ type africaCountryCode =
   | 'SZ'
   | 'ZA';
 
-export type CountryCode = southeastAsiaCountryCode | africaCountryCode;
+type centralAmericaCountryCode =
+  | 'BZ'
+  | 'CR'
+  | 'GT'
+  | 'HN'
+  | 'MX'
+  | 'NI'
+  | 'PA'
+  | 'SV';
 
-export type Region = 'southeastAsia' | 'africa';
+type southAmericaCountryCode =
+  | 'AR'
+  | 'BO'
+  | 'BR'
+  | 'CL'
+  | 'CO'
+  | 'EC'
+  | 'FK'
+  | 'GF'
+  | 'GY'
+  | 'PE'
+  | 'PY'
+  | 'SR'
+  | 'VE';
+
+type caribbeanCountryCode =
+  | 'AG'
+  | 'AI'
+  | 'AW'
+  | 'BB'
+  | 'BL'
+  | 'CU'
+  | 'DM'
+  | 'DO'
+  | 'GD'
+  | 'LC'
+  | 'MS'
+  | 'KN'
+  | 'VC'
+  | 'TT'
+  | 'HT'
+  | 'JM'
+  | 'BS'
+  | 'TC'
+  | 'PR'
+  | 'BQ'
+  | 'SX'
+  | 'GP'
+  | 'MQ'
+  | 'VI';
+
+export type CountryCode =
+  | southeastAsiaCountryCode
+  | africaCountryCode
+  | centralAmericaCountryCode
+  | southAmericaCountryCode
+  | caribbeanCountryCode;
+
+export type Region =
+  | 'southeastAsia'
+  | 'africa'
+  | 'centralAmerica'
+  | 'southAmerica'
+  | 'caribbean';
