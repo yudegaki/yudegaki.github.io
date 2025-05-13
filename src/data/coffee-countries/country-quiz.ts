@@ -44,13 +44,31 @@ const africaQuizzes: CountryQuiz[] = [
   },
   {
     id: 'africa-4',
+    question: 'コートジボワールはどこ？',
+    answer: 'CI',
+    explanation: '覚えましょう',
+  },
+  {
+    id: 'africa-5',
+    question: 'イエメンはどこ？',
+    answer: 'YE',
+    explanation: '覚えましょう',
+  },
+  {
+    id: 'africa-6',
+    question: 'ウガンダはどこ？',
+    answer: 'UG',
+    explanation: '覚えましょう',
+  },
+  {
+    id: 'africa-7',
     question: '特定銘柄「キリマンジャロ」で知られるコーヒー豆の産地はどこ？',
     answer: 'TZ',
     explanation:
       'キリマンジャロはタンザニアで生産されるコーヒー豆です。ただし、ブコバ地区で生産された豆は含まれません。',
   },
   {
-    id: 'africa-5',
+    id: 'africa-8',
     question: '特定銘柄「モカハラー」で知られるコーヒー豆の産地はどこ？',
     answer: 'ET',
     explanation: 'モカハラーはエチオピアで生産されるコーヒー豆です。',
@@ -76,6 +94,30 @@ const centralAmericaQuizzes: CountryQuiz[] = [
     answer: 'HN',
     explanation: '覚えましょう',
   },
+  {
+    id: 'central-america-4',
+    question: 'メキシコはどこ？',
+    answer: 'MX',
+    explanation: '覚えましょう',
+  },
+  {
+    id: 'central-america-5',
+    question: 'エルサルバドルはどこ？',
+    answer: 'SV',
+    explanation: '覚えましょう',
+  },
+  {
+    id: 'central-america-6',
+    question: 'ニカラグアはどこ？',
+    answer: 'NI',
+    explanation: '覚えましょう',
+  },
+  {
+    id: 'central-america-7',
+    question: 'パナマはどこ？',
+    answer: 'PA',
+    explanation: '覚えましょう',
+  },
 ];
 const southAmericaQuizzes: CountryQuiz[] = [
   {
@@ -94,6 +136,12 @@ const southAmericaQuizzes: CountryQuiz[] = [
     id: 'south-america-3',
     question: 'ペルーはどこ？',
     answer: 'PE',
+    explanation: '覚えましょう',
+  },
+  {
+    id: 'south-america-4',
+    question: 'エクアドルはどこ？',
+    answer: 'EC',
     explanation: '覚えましょう',
   },
 ];
