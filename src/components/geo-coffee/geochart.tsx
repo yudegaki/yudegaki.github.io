@@ -114,7 +114,6 @@ export const GeoChart = ({
       if (selection.length === 0) return;
 
       const countryCode = data.getValue(selection[0].row, 0);
-      console.log('Selected country code:', countryCode);
       setSelectedCountry(countryCode);
       onSelectCountry(countryCode);
     });
