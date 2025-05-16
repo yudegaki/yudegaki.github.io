@@ -150,9 +150,15 @@ const centralAmericaQuizzes: CountryQuiz[] = [
   },
   {
     id: 'central-america-13',
-    question: '規格が SHG, HG で知られ、グアテマラと隣接している国はどこ？',
+    question: '規格が SHG, HG で知られ、グアテマラ、エルサルバドルと隣接している国はどこ？',
     answer: 'HN',
     explanation: 'ホンジュラスで生産されるコーヒー豆は、SHG, HGという規格で知られています。',
+  },
+  {
+    id: 'central-america-14',
+    question: '規格が SHG, HG で知られ、グアテマラ、ホンジュラスと隣接している国はどこ？',
+    answer: 'SV',
+    explanation: 'エルサルバドルで生産されるコーヒー豆は、SHG, HGという規格で知られています。',
   }
 ];
 
