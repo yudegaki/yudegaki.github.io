@@ -155,15 +155,39 @@ const caribbeanQuizzes: CountryQuiz[] = [
   },
   {
     id: 'caribbean-2',
-    question: 'ドミニカ共和国はどこ？',
-    answer: 'DO',
+    question: 'キューバはどこ？',
+    answer: 'CU',
     explanation: '覚えましょう',
   },
   {
     id: 'caribbean-3',
-    question: 'キューバはどこ？',
+    question: '格付けが ETL, TL, AL で知られるコーヒー豆の産地はどこ？',
     answer: 'CU',
-    explanation: '覚えましょう',
+    explanation: 'キューバで生産されるコーヒー豆は、ETL, TL, AL という格付けで知られています。',
+  },
+  {
+    id: 'caribbean-4',
+    question: '特定銘柄「クリスタルマウンテン」で知られるコーヒー豆の産地はどこ？',
+    answer: 'CU',
+    explanation: 'クリスタルマウンテンはキューバで生産されるアラビカ種コーヒー豆です。',
+  },
+  {
+    id: 'caribbean-5',
+    question: '特定銘柄「ブルーマウンテン」で知られるコーヒー豆の産地はどこ？',
+    answer: 'JM',
+    explanation: 'ブルーマウンテンはジャマイカのブルーマウンテン地区で生産されるアラビカ種コーヒー豆です。',
+  },
+  {
+    id: 'caribbean-6',
+    question: '特定銘柄「ハイマウンテン」で知られるコーヒー豆の産地はどこ？',
+    answer: 'JM',
+    explanation: 'ハイマウンテンはジャマイカのハイマウンテン地区で生産されるアラビカ種コーヒー豆です。',
+  },
+  {
+    id: 'caribbean-7',
+    question: '格付けが No.1, No.2, No.3, セレクトで知られるコーヒー豆の産地はどこ？',
+    answer: 'JM',
+    explanation: 'ジャマイカで生産されるコーヒー豆は、No.1, No.2, No.3, セレクトという格付けで知られています。',
   },
 ];
 
