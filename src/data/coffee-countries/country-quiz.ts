@@ -43,6 +43,24 @@ const africaQuizzes: CountryQuiz[] = [
     explanation: '覚えましょう',
   },
   {
+    id: 'africa-4',
+    question: '規格が AA, AB で知られ、年二回収穫が行われる国はどこ？',
+    answer: 'KE',
+    explanation: 'ケニアで生産されるコーヒー豆は、AA, ABという規格で知られており、赤道が通るため収穫は年二回行われます。',
+  },
+  {
+    id: 'africa-5',
+    question: '特定銘柄「キリマンジャロ」で知られるコーヒー豆の産地はどこ？',
+    answer: 'TZ',
+    explanation: 'キリマンジャロはタンザニアで生産されるコーヒー豆です。',
+  },
+  {
+    id: 'africa-6',
+    question: '規格が AA, AB で知られ、ケニアと隣接している国はどこ？',
+    answer: 'TZ',
+    explanation: 'タンザニアで生産されるコーヒー豆は、AA, ABという規格で知られています。',
+  },
+  {
     id: 'africa-7',
     question: '特定銘柄「キリマンジャロ」で知られるコーヒー豆の産地はどこ？',
     answer: 'TZ',
@@ -54,6 +72,18 @@ const africaQuizzes: CountryQuiz[] = [
     question: '特定銘柄「モカハラー」で知られるコーヒー豆の産地はどこ？',
     answer: 'ET',
     explanation: 'モカハラーはエチオピアで生産されるコーヒー豆です。',
+  },
+  {
+    id: 'africa-9',
+    question: '格付けがスクリーンサイズ、規格が AA, AB で知られ、エチオピアと隣接している国はどこ？',
+    answer: 'KE',
+    explanation: 'ケニアで生産されるコーヒー豆は、AA, ABという規格で知られています。格付け方式はスクリーンサイズです。',
+  },
+  {
+    id: 'africa-10',
+    question: '格付けが欠点数、規格が G1 ~ G5 のコーヒー豆の産地はどこ？',
+    answer: 'ET',
+    explanation: 'エチオピアで生産されるコーヒー豆は、G1 ~ G5という規格で知られています。格付け方式は欠点数です。',
   },
 ];
 
