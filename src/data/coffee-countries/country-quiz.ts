@@ -43,24 +43,6 @@ const africaQuizzes: CountryQuiz[] = [
     explanation: '覚えましょう',
   },
   {
-    id: 'africa-4',
-    question: 'コートジボワールはどこ？',
-    answer: 'CI',
-    explanation: '覚えましょう',
-  },
-  {
-    id: 'africa-5',
-    question: 'イエメンはどこ？',
-    answer: 'YE',
-    explanation: '覚えましょう',
-  },
-  {
-    id: 'africa-6',
-    question: 'ウガンダはどこ？',
-    answer: 'UG',
-    explanation: '覚えましょう',
-  },
-  {
     id: 'africa-7',
     question: '特定銘柄「キリマンジャロ」で知られるコーヒー豆の産地はどこ？',
     answer: 'TZ',
