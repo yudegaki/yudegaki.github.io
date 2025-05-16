@@ -119,6 +119,7 @@ const centralAmericaQuizzes: CountryQuiz[] = [
     explanation: '覚えましょう',
   },
 ];
+
 const southAmericaQuizzes: CountryQuiz[] = [
   {
     id: 'south-america-1',
@@ -140,10 +141,9 @@ const southAmericaQuizzes: CountryQuiz[] = [
   },
   {
     id: 'south-america-4',
-    question: 'エクアドルはどこ？',
-    answer: 'EC',
-    explanation: '覚えましょう',
-  },
+    question: '格付けが ',
+    answer: 'CL',
+    explanation: '覚えましょう',}
 ];
 
 const caribbeanQuizzes: CountryQuiz[] = [
@@ -161,9 +161,9 @@ const caribbeanQuizzes: CountryQuiz[] = [
   },
   {
     id: 'caribbean-3',
-    question: '格付けが ETL, TL, AL で知られるコーヒー豆の産地はどこ？',
+    question: '規格が ETL, TL, AL で知られるコーヒー豆の産地はどこ？',
     answer: 'CU',
-    explanation: 'キューバで生産されるコーヒー豆は、ETL, TL, AL という格付けで知られています。',
+    explanation: 'キューバで生産されるコーヒー豆は、ETL, TL, AL という規格で知られています。',
   },
   {
     id: 'caribbean-4',
@@ -185,9 +185,9 @@ const caribbeanQuizzes: CountryQuiz[] = [
   },
   {
     id: 'caribbean-7',
-    question: '格付けが No.1, No.2, No.3, セレクトで知られるコーヒー豆の産地はどこ？',
+    question: '規格が No.1, No.2, No.3, セレクトで知られるコーヒー豆の産地はどこ？',
     answer: 'JM',
-    explanation: 'ジャマイカで生産されるコーヒー豆は、No.1, No.2, No.3, セレクトという格付けで知られています。',
+    explanation: 'ジャマイカで生産されるコーヒー豆は、No.1, No.2, No.3, セレクトという規格で知られています。',
   },
 ];
 
