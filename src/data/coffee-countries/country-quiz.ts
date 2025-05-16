@@ -141,9 +141,46 @@ const southAmericaQuizzes: CountryQuiz[] = [
   },
   {
     id: 'south-america-4',
-    question: '格付けが ',
-    answer: 'CL',
-    explanation: '覚えましょう',}
+    question: '規格が エクセルソスプレモ、エクセルソUGQ で知られるコーヒー豆の産地はどこ？',
+    answer: 'CO',
+    explanation: 'コロンビアで生産されるコーヒー豆は、エクセルソスプレモ、エクセルソUGQという規格で知られています。',
+  },
+  {
+    id: 'south-america-5',
+    question: '特定銘柄「コロンビアスプレモ」で知られるコーヒー豆の産地はどこ？',
+    answer: 'CO',
+    explanation: 'コロンビアスプレモはコロンビアで生産されるアラビカ種コーヒー豆です。',
+  },
+  {
+    id: 'south-america-6',
+    question: '規格が No.2, No.4/5 で知られるコーヒー豆の産地はどこ？',
+    answer: 'BR',
+    explanation: 'ブラジルで生産されるコーヒー豆は、No.2, No.4/5という規格で知られています。',
+  },
+  {
+    id: 'south-america-7',
+    question: '規格が G1 ~ G5 , 格付け方式が 欠点数で知られ、ブラジルとコロンビアに隣接している国はどこ？',
+    answer: 'PE',
+    explanation: 'ペルーで生産されるコーヒー豆は、G1 ~ G5という規格で知られています。格付け方式は欠点数です。',
+  },
+  {
+    id: 'south-america-8',
+    question: 'コーヒーの生産量が世界第1位で、アラビカ種とロブスタ種の両方を生産している国はどこ？',
+    answer: 'BR',
+    explanation: 'ブラジルはコーヒーの生産量が世界第1位で、アラビカ種とロブスタ種の両方を生産しています。',
+  },
+  {
+    id: 'south-america-9',
+    question: '水洗式のコーヒー豆の生産量が世界第1位の国はどこ？',
+    answer: 'CO',
+    explanation: 'コロンビアは水洗式のコーヒー豆の生産量が世界第1位です。',
+  },
+  {
+    id: 'south-america-10',
+    question: '収穫が年2回行われる国はどこ？',
+    answer: 'CO',
+    explanation: 'コロンビアでは、コーヒーの収穫が年2回行われます。ブラジルは赤道が通っていますが、栽培地域は赤道から離れているため年1回の収穫です。',
+  }
 ];
 
 const caribbeanQuizzes: CountryQuiz[] = [
