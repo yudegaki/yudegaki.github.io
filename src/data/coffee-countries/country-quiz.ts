@@ -118,6 +118,42 @@ const centralAmericaQuizzes: CountryQuiz[] = [
     answer: 'PA',
     explanation: '覚えましょう',
   },
+  {
+    id: 'central-america-8',
+    question: '特定銘柄「グアテマラアンティグア」で知られるコーヒー豆の産地はどこ？',
+    answer: 'GT',
+    explanation: 'グアテマラアンティグアはグアテマラで生産されるアラビカ種コーヒー豆です。',
+  },
+  {
+    id: 'central-america-9',
+    question: '規格が HG, PW で知られるコーヒー豆の産地はどこ？',
+    answer: 'MX',
+    explanation: 'メキシコで生産されるコーヒー豆は、HG, PWという規格で知られています。',
+  },
+  {
+    id: 'central-america-10',
+    question: '規格が SHB, HB で知られるコーヒー豆の産地はどこ？',
+    answer: 'CR',
+    explanation: 'コスタリカ(中央高地)で生産されるコーヒー豆は、SHB, HBという規格で知られています。',
+  },
+  {
+    id: 'central-america-11',
+    question: '規格が SHB, HB, EPW で知られるコーヒー豆の産地はどこ？',
+    answer: 'GT',
+    explanation: 'グアテマラで生産されるコーヒー豆は、SHB, HB, EPWという規格で知られています。',
+  },
+  {
+    id: 'central-america-12',
+    question: '規格が SHG, HG で知られ、ホンジュラス、コスタリカと隣接している国はどこ？',
+    answer: 'NI',
+    explanation: 'ニカラグアで生産されるコーヒー豆は、SHG, HGという規格で知られています。',
+  },
+  {
+    id: 'central-america-13',
+    question: '規格が SHG, HG で知られ、グアテマラと隣接している国はどこ？',
+    answer: 'HN',
+    explanation: 'ホンジュラスで生産されるコーヒー豆は、SHG, HGという規格で知られています。',
+  }
 ];
 
 const southAmericaQuizzes: CountryQuiz[] = [
