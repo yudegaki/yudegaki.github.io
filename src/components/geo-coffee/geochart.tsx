@@ -24,7 +24,6 @@ export const GeoChart = ({
 }: GeoChartProps) => {
   const chartRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [chart, setChart] = useState<any>(null);
   const [selectedCountry, setSelectedCountry] = useState<CountryCode | null>(
     null
   );
@@ -36,6 +35,7 @@ export const GeoChart = ({
         window.google &&
         window.google.charts
       ) {
+        setIsLoaded(true);
         return Promise.resolve();
       }
 
@@ -108,7 +108,6 @@ export const GeoChart = ({
     };
 
     const newChart = new window.google.visualization.GeoChart(chartRef.current);
-
     window.google.visualization.events.addListener(newChart, 'select', () => {
       const selection = newChart.getSelection();
       if (selection.length === 0) return;
@@ -119,7 +118,6 @@ export const GeoChart = ({
     });
 
     newChart.draw(data, options);
-    setChart(newChart);
   };
 
   useEffect(() => {
@@ -127,16 +125,14 @@ export const GeoChart = ({
 
     drawChart();
     const handleResize = () => {
-      if (chart) {
-        drawChart();
-      }
+      drawChart();
     };
 
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [isLoaded, selectedCountry, collectAnswer]);
+  }, [isLoaded, selectedCountry, collectAnswer, regionCode, countryCodeMapping]);
 
   useEffect(() => {
     setSelectedCountry(null);
