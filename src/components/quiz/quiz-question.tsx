@@ -35,6 +35,18 @@ export default function QuizQuestion({
   const [startTime, setStartTime] = useState<number>(Date.now());
   const [userAnswers, setUserAnswers] = useState<QuizAnswer[]>([]);
 
+  if (quizData.length === 0) {
+    return (
+      <Card className="w-full shadow-md">
+        <CardHeader>
+          <CardTitle className="text-xl text-center">
+            クイズが見つかりませんでした
+          </CardTitle>
+        </CardHeader>
+      </Card>
+    );
+  }
+
   // 現在のクイズ
   const currentQuiz: QuizItem = quizData[currentQuizIndex];
 

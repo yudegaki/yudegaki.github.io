@@ -41,7 +41,9 @@ export default function QuizResults({
     (answer) => answer.isCorrect
   ).length;
   const totalQuestions = quizData.length;
-  const scorePercentage = Math.round((correctAnswers / totalQuestions) * 100);
+  const scorePercentage = totalQuestions
+    ? Math.round((correctAnswers / totalQuestions) * 100)
+    : 0;
 
   // 円グラフのデータ
   const pieData = [
@@ -107,7 +109,9 @@ export default function QuizResults({
     (acc, answer) => acc + answer.timeSpent,
     0
   );
-  const averageTime = Math.round(totalTime / userAnswers.length);
+  const averageTime = userAnswers.length
+    ? Math.round(totalTime / userAnswers.length)
+    : 0;
 
   // 成績評価を取得
   const getGrade = (percentage: number) => {

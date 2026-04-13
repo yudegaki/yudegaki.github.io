@@ -41,8 +41,18 @@ export const GeoCoffeeQuiz = ({
 
   const quizData = useMemo(
     () => getRandomCountryQuizzes(selectedRegion.id, quizCountLimit),
-    []
+    [selectedRegion.id, quizCountLimit]
   );
+
+  if (quizData.length === 0) {
+    return (
+      <Card className="w-full">
+        <CardContent className="pt-6 text-center">
+          <p className="text-lg">この地域のクイズが見つかりませんでした。</p>
+        </CardContent>
+      </Card>
+    );
+  }
 
   const currentQuiz = quizData[currentQuizIndex];
   const isCorrect = selectedCountry === currentQuiz.answer;
